@@ -46,3 +46,36 @@
 # print("\nD (чётные * 2, нечётные ** 2):")
 # for row in D:
 #     print(row)
+
+
+# 8.В) Даны квадратные матрицы А и В порядка n. Найти А+В.
+n = int(input("Введите порядок квадратных матриц n: "))
+
+print("Введите матрицу A:")
+A = []
+for i in range(n):
+    row = list(map(int, input(f"Строка {i+1}: ").split()))
+    if len(row) != n:
+        print("Ошибка! Должно быть", n, "элементов в строке.")
+        exit()
+    A.append(row)
+
+print("Введите матрицу B:")
+B = []
+for i in range(n):
+    row = list(map(int, input(f"Строка {i+1}: ").split()))
+    if len(row) != n:
+        print("Ошибка! Должно быть", n, "элементов в строке.")
+        exit()
+    B.append(row)
+
+C = []
+for i in range(n):
+    row = []
+    for j in range(n):
+        row.append(A[i][j] + B[i][j])
+    C.append(row)
+
+print("Матрица A + B:")
+for row in C:
+    print(*row)

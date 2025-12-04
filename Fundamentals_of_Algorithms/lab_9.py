@@ -21,9 +21,14 @@
 # Задание 9 (По индив. номеру)
 # 9. Составить программу, которая находит наименьшее из четырех чисел.
 
-def main(a,b,c,d):
-    result = [a,b,c,d]
-    return min(result)
-print(main(1,23,55,44))
+# def main(a,b,c,d):
+#     result = [a,b,c,d]
+#     return min(result)
+# print(main(1,23,55,44))
 
-
+# 8. Написать программу, которая вычисляет , где x, y, z – действительные
+# числа.
+# def main(x, y, z):
+#     return (x + y) / z
+#
+# print(main(1.5, 2.0, 3.0))

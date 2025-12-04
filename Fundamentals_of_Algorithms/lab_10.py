@@ -35,3 +35,31 @@
 #         print(f"Не угадал! Я загадал: {bot_number}")
 # main()
 
+# 8. Программа предлагает пользователю два случайных числа и случайную
+# математическую операцию из двух: сложение или умножение. Далее
+# пользователь вводит ответ, и если он правильный, программа выводит
+# поздравление. Если ответ неправильный, тогда выводится правильный ответ
+import random
+
+def main():
+    num1 = random.randint(1, 10)
+    num2 = random.randint(1, 10)
+
+    operation = random.choice(['+', '*'])
+
+    if operation == '+':
+        correct_answer = num1 + num2
+    else:
+        correct_answer = num1 * num2
+
+    print(f"Вычислите: {num1} {operation} {num2}")
+    user_answer = float(input("Ваш ответ: "))
+
+    if user_answer == correct_answer:
+        print("Поздравляем! Ответ правильный ")
+    else:
+        print(f"Неправильно Правильный ответ: {correct_answer}")
+
+main()
+
+
