@@ -2,17 +2,28 @@
 # 13. Написать функцию, вычисляющую корни линейного уравнения. Рассмотреть
 # случаи а = 0, а≠0 и т.д.
 
-def solve_linear(a, b):
-    if a == 0:
-        if b == 0:
-            return "Бесконечно много решений"   # 0x + 0 = 0
-        else:
-            return "Решений нет"                # 0x + b = 0 (b ≠ 0)
-    x = -b / a
-    return f"Корень уравнения: x = {x}"
+# def solve_linear(a, b):
+#     if a == 0:
+#         if b == 0:
+#             return "Бесконечно много решений"   # 0x + 0 = 0
+#         else:
+#             return "Решений нет"                # 0x + b = 0 (b ≠ 0)
+#     x = -b / a
+#     return f"Корень уравнения: x = {x}"
+#
+# a = float(input("Введите a: "))
+# b = float(input("Введите b: "))
+#
+# result = solve_linear(a, b)
+# print(result)
 
-a = float(input("Введите a: "))
-b = float(input("Введите b: "))
 
-result = solve_linear(a, b)
-print(result)
+# Задание 9 (По индив. номеру)
+# 9. Составить программу, которая находит наименьшее из четырех чисел.
+
+def main(a,b,c,d):
+    result = [a,b,c,d]
+    return min(result)
+print(main(1,23,55,44))
+
+
