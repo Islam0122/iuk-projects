@@ -86,13 +86,55 @@
 # Задание 7.4.
 # 13.Дан список из 10 случайных целых чисел в отрезке 0, 20. Отсортируйте список по возрастанию и убыванию и выведите результаты на экран. Для решения используйте стандартные методы для списков.
 
-import random
+# import random
+#
+# numbers = [random.randint(0, 20) for _ in range(10)]
+# print("Исходный список:", numbers)
+#
+# ascending = sorted(numbers)
+# print("По возрастанию:", ascending)
+#
+# descending = sorted(numbers, reverse=True)
+# print("По убыванию:", descending)
 
-numbers = [random.randint(0, 20) for _ in range(10)]
-print("Исходный список:", numbers)
 
-ascending = sorted(numbers)
-print("По возрастанию:", ascending)
+# Дан словарь с числовыми значениями. Нужно перемножить все значения и вывести результат.
+# data = {
+#     'a': 2,
+#     'b': 3,
+#     'c': 4
+# }
+#
+# result = 1
+# for value in data.values():
+#     result *= value
+#
+# print(result)
 
-descending = sorted(numbers, reverse=True)
-print("По убыванию:", descending)
+
+# 8.Пользователь вводит друг за другом два слова. Программа должна
+# определить, можно ли из букв слова с наибольшим количеством букв,
+# составить слово с наименьшим количеством букв.
+# Примеры:
+# Введите первое слово: око
+# Введите второе слово: окно
+# Из слова окно можно составить слово око
+# Введите первое слово: программа
+# Введите второе слово: строка
+# Составить нельзя
+word1 = input("Введите первое слово: ").strip()
+word2 = input("Введите второе слово: ").strip()
+
+long_word = word1 if len(word1) > len(word2) else word2
+short_word = word2 if long_word == word1 else word1
+
+can_make = True
+for ch in short_word:
+    if short_word.count(ch) > long_word.count(ch):
+        can_make = False
+        break
+
+if can_make:
+    print(f"Из слова {long_word} можно составить слово {short_word}")
+else:
+    print("Составить нельзя")

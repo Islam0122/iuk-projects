@@ -82,63 +82,74 @@
 Работа с классами.Содать свой класс, без и с использованием
 конструктора. Использовать в программе наследование, полиморфизм.
 """
-from abc import ABC, abstractmethod
+# from abc import ABC, abstractmethod
+#
+#
+#
+#
+#
+# class Vehicle(ABC):
+#     @abstractmethod
+#     def start(self):
+#         pass
+#
+#     @abstractmethod
+#     def stop(self):
+#         pass
+#
+# class Car(Vehicle):
+#     def __init__(self, brand, model):
+#         self.brand = brand
+#         self.model = model
+#
+#     def start(self):
+#         print(f"{self.brand} {self.model} started!")
+#
+#     def stop(self):
+#         print(f"{self.brand} {self.model} stopped!")
+#
+#     def __str__(self):
+#         return f"Car: {self.brand} {self.model}"
+#
+#     def __add__(self, other):
+#         return f"{self.brand} + {other.brand} combination"
+#
+# class Truck(Car):
+#     def __init__(self, brand, model, load_capacity):
+#         # self.brand = brand
+#         # self.model = model
+#         super().__init__(brand, model)
+#         self.load_capacity = load_capacity
+#
+#     def __str__(self):
+#         return f"Truck: {self.brand} {self.model}, Load: {self.load_capacity}kg"
+#
+# def main():
+#     car1 = Car("Toyota", "Camry")
+#     car2 = Car("Honda", "Civic")
+#     truck1 = Truck("Volvo", "FH", 20000)
+#
+#     car1.start()
+#     car2.start()
+#     truck1.start()
+#
+#     car1.stop()
+#     truck1.stop()
+#
+#     print(car1)
+#     print(truck1)
+#     print(car1 + car2)
+#
+# if __name__ == "__main__":
+#     main()
 
+import random
 
+numbers = [random.randint(1, 100) for _ in range(10)]
+print("Список:", numbers)
+unique_numbers = sorted(set(numbers))  # убираем одинаковые и сортируем
 
-
-
-class Vehicle(ABC):
-    @abstractmethod
-    def start(self):
-        pass
-
-    @abstractmethod
-    def stop(self):
-        pass
-
-class Car(Vehicle):
-    def __init__(self, brand, model):
-        self.brand = brand
-        self.model = model
-
-    def start(self):
-        print(f"{self.brand} {self.model} started!")
-
-    def stop(self):
-        print(f"{self.brand} {self.model} stopped!")
-
-    def __str__(self):
-        return f"Car: {self.brand} {self.model}"
-
-    def __add__(self, other):
-        return f"{self.brand} + {other.brand} combination"
-
-class Truck(Car):
-    def __init__(self, brand, model, load_capacity):
-        # self.brand = brand
-        # self.model = model
-        super().__init__(brand, model)
-        self.load_capacity = load_capacity
-
-    def __str__(self):
-        return f"Truck: {self.brand} {self.model}, Load: {self.load_capacity}kg"
-
-def main():
-    car1 = Car("Toyota", "Camry")
-    car2 = Car("Honda", "Civic")
-    truck1 = Truck("Volvo", "FH", 20000)
-
-    car1.start()
-    car2.start()
-    truck1.start()
-
-    car1.stop()
-    truck1.stop()
-
-    print(car1)
-    print(truck1)
-    print(car1 + car2)
-
-if __name__ == "__main__":
-    main()
+if len(unique_numbers) >= 2:
+    print("Второй минимальный элемент:", unique_numbers[1])
+else:
+    print("Второго минимального элемента нет")
